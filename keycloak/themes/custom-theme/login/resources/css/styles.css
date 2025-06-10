@@ -1,0 +1,13 @@
+* {
+    color: black;
+}
+
+
+#kc-header-wrapper {
+    color: white;
+}
+
+.login-pf body {
+    background-image: url("../img/kc-background.jpg");
+    background-size: cover;
+}

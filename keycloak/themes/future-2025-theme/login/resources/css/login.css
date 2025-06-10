@@ -1,0 +1,249 @@
+/* Additional Login-specific styles */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Enhanced login form animations */
+.login-box {
+  animation: slideInUp 0.6s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form input focus effects */
+.form-input {
+  position: relative;
+}
+
+.form-input:focus {
+  animation: inputFocus 0.3s ease-out;
+}
+
+@keyframes inputFocus {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Button hover effects */
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+/* Enhanced password toggle */
+.password-toggle {
+  z-index: 10;
+}
+
+.password-toggle:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+/* Form validation states */
+.form-input:invalid {
+  border-color: var(--error-color);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.form-input:valid {
+  border-color: var(--success-color);
+}
+
+/* Loading state for form submission */
+.btn-primary[disabled] {
+  position: relative;
+  color: transparent;
+}
+
+.btn-primary[disabled]::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: -0.75rem 0 0 -0.75rem;
+  border: 2px solid transparent;
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Enhanced checkbox styling */
+.checkbox-wrapper input[type="checkbox"] {
+  appearance: none;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 4px;
+  position: relative;
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.checkbox-wrapper input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: -2px;
+  left: 1px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* Social login buttons (if needed) */
+.social-login {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.social-btn {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  background: var(--surface-light);
+  border-color: var(--border-light);
+  transform: translateY(-1px);
+}
+
+/* Form field animations */
+.form-group {
+  position: relative;
+}
+
+.form-label {
+  transition: all 0.2s ease;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  transform: translateY(-0.5rem) scale(0.85);
+  color: var(--primary-color);
+}
+
+/* Error message animations */
+.form-error {
+  animation: slideInError 0.3s ease-out;
+}
+
+@keyframes slideInError {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Alert animations */
+.alert {
+  animation: slideInAlert 0.4s ease-out;
+}
+
+@keyframes slideInAlert {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .login-background::before {
+    background: 
+      radial-gradient(circle at 50% 0%, rgba(120, 119, 198, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 0% 100%, rgba(255, 119, 198, 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+  }
+  
+  .login-title {
+    font-size: 1.5rem;
+  }
+  
+  .form-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  .login-box {
+    box-shadow: 
+      var(--shadow),
+      inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .login-box,
+  .form-input,
+  .btn-primary,
+  .alert,
+  .form-error {
+    animation: none;
+    transition: none;
+  }
+  
+  .btn-primary::before {
+    display: none;
+  }
+}

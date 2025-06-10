@@ -1,0 +1,73 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield Background -->
+  <path d="M256 32L416 128V256C416 370.875 336.875 480 256 480C175.125 480 96 370.875 96 256V128L256 32Z" 
+        fill="url(#gradient1)" stroke="url(#gradient2)" stroke-width="4"/>
+  
+  <!-- Circuit Pattern -->
+  <g stroke="currentColor" stroke-width="3" fill="none" opacity="0.7">
+    <!-- Top Left Circuit -->
+    <circle cx="180" cy="150" r="12" fill="currentColor"/>
+    <line x1="192" y1="150" x2="220" y2="150"/>
+    <line x1="220" y1="150" x2="220" y2="180"/>
+    <circle cx="220" cy="192" r="8" fill="currentColor"/>
+    
+    <!-- Top Right Circuit -->
+    <circle cx="332" cy="150" r="12" fill="currentColor"/>
+    <line x1="320" y1="150" x2="292" y2="150"/>
+    <line x1="292" y1="150" x2="292" y2="180"/>
+    <circle cx="292" cy="192" r="8" fill="currentColor"/>
+    
+    <!-- Bottom Left Circuit -->
+    <circle cx="180" cy="320" r="12" fill="currentColor"/>
+    <line x1="192" y1="320" x2="220" y2="320"/>
+    <line x1="220" y1="320" x2="220" y2="290"/>
+    <circle cx="220" cy="278" r="8" fill="currentColor"/>
+    
+    <!-- Bottom Right Circuit -->
+    <circle cx="332" cy="320" r="12" fill="currentColor"/>
+    <line x1="320" y1="320" x2="292" y2="320"/>
+    <line x1="292" y1="320" x2="292" y2="290"/>
+    <circle cx="292" cy="278" r="8" fill="currentColor"/>
+    
+    <!-- Center Connections -->
+    <line x1="220" y1="235" x2="256" y2="235"/>
+    <line x1="292" y1="235" x2="256" y2="235"/>
+    <circle cx="256" cy="235" r="15" fill="currentColor"/>
+    
+    <!-- Vertical Center Line -->
+    <line x1="256" y1="220" x2="256" y2="250"/>
+  </g>
+  
+  <!-- Central Security Symbol -->
+  <g transform="translate(256, 256)">
+    <!-- Key Symbol -->
+    <circle cx="0" cy="-20" r="18" stroke="currentColor" stroke-width="4" fill="none"/>
+    <rect x="-3" y="-2" width="6" height="40" fill="currentColor" rx="3"/>
+    <rect x="3" y="15" width="12" height="4" fill="currentColor" rx="2"/>
+    <rect x="3" y="25" width="8" height="4" fill="currentColor" rx="2"/>
+  </g>
+  
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.1"/>
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:0.6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Color will be inherited from CSS -->
+  <style>
+    svg {
+      color: #64748b;
+    }
+    @media (prefers-color-scheme: dark) {
+      svg {
+        color: #cbd5e1;
+      }
+    }
+  </style>
+</svg>

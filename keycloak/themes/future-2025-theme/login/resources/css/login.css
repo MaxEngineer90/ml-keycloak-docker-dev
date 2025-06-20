@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    --surface-glass: rgba(0, 0, 0, 0.4);
+    --surface-glass-hover: rgba(0, 0, 0, 0.5);
+    --border-glass: rgba(255, 255, 255, 0.2);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.6);
+    --accent-cyan: #00f5ff;
+    --shadow-glow: rgba(102, 126, 234, 0.2);
+    --border-radius: 12px;
+    --border-radius-lg: 20px;
+    --input-bg: rgba(255, 255, 255, 0.1);
+    --input-border: rgba(255, 255, 255, 0.2);
+    --input-focus-border: rgba(255, 255, 255, 0.4);
+    --submit-btn-bg: rgba(220, 80, 57, 0.9);
+    --submit-btn-hover: rgba(220, 80, 57, 1);
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 20px;
+    --spacing-xl: 24px;
+    --spacing-2xl: 40px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 25%, #0f3460 50%, #0a2955 100%) !important;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#kc-header,
+#kc-header-wrapper,
+.kc-logo-text,
+.kc-logo-text span,
+.pf-v5-c-brand,
+.pf-c-brand,
+.pf-v5-c-login__header,
+.pf-v5-c-login__header-brand,
+.pf-v5-c-login__header-brand-link,
+.pf-v5-c-login__header-brand-name,
+[class*="kc-logo"],
+[class*="kc-header"],
+[id*="kc-header"],
+.login-pf-header h2,
+#kc-page-title,
+.pf-c-title,
+header[class*="pf-"],
+.pf-v5-c-login_container > header,
+.pf-v5-c-login_container header,
+.pf-v5-c-page__header,
+.pf-v5-c-page__header-brand,
+.pf-v5-c-page__header-brand-link,
+.pf-v5-c-masthead,
+.pf-v5-c-masthead__brand,
+*[class*="masthead"],
+*[class*="brand"]:not(.login-pf-header),
+*[data-testid*="brand"],
+*[aria-label*="Keycloak"],
+*[title*="Keycloak"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    z-index: -999 !important;
+}
+
+*:contains("Keycloak"),
+span:contains("Keycloak"),
+div:contains("Keycloak"):not(.login-pf-header):not([class*="cyber"]) {
+    display: none !important;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 15% 85%, rgba(220, 80, 57, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 85% 15%, rgba(220, 80, 57, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(120, 119, 198, 0.08) 0%, transparent 50%);
+    animation: backgroundShift 20s ease-in-out infinite;
+    z-index: -2;
+}
+
+@keyframes backgroundShift {
+    0%, 100% { transform: translateX(0) translateY(0); }
+    25% { transform: translateX(-10px) translateY(-10px); }
+    50% { transform: translateX(10px) translateY(10px); }
+    75% { transform: translateX(-5px) translateY(5px); }
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, var(--accent-cyan), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(220, 80, 57, 0.6), transparent),
+        radial-gradient(1px 1px at 90px 40px, #667eea, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: particles 40s linear infinite;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+@keyframes particles {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-200px); }
+}
+
+.login-pf-page,
+.pf-v5-c-login,
+.pf-v5-c-page {
+    background: transparent !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+    padding: var(--spacing-lg) !important;
+    position: relative !important;
+    width: 100% !important;
+}
+
+.pf-v5-c-login__container,
+.pf-v5-c-login_container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+.pf-v5-c-login__main,
+.pf-v5-c-login_main,
+main[class*="pf-v5-c-login"] {
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+}
+
+.card-pf,
+.pf-v5-c-card,
+.pf-c-card {
+    background: var(--surface-glass) !important;
+    backdrop-filter: blur(25px) !important;
+    border-radius: var(--border-radius-lg) !important;
+    border: 1px solid var(--border-glass) !important;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 8px 25px rgba(102, 126, 234, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    padding: 48px !important;
+    max-width: 420px !important;
+    width: 100% !important;
+    position: relative;
+    overflow: hidden;
+    margin: auto !important;
+}
+
+.card-pf::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.03), transparent);
+    transform: rotate(45deg);
+    animation: shine 8s linear infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+.login-pf-header {
+    text-align: center !important;
+    margin-bottom: 40px !important;
+    position: relative;
+    z-index: 10;
+}
+
+.login-pf-header h1:not(:first-of-type),
+.login-pf-header h2,
+.login-pf-header h3 {
+    display: none !important;
+}
+
+.logo {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 0 auto 32px auto !important;
+    display: block !important;
+    animation: logoFloat 4s ease-in-out infinite;
+    filter: drop-shadow(0 6px 20px rgba(102, 126, 234, 0.4));
+    transition: transform 0.3s ease !important;
+}
+
+.logo:hover {
+    transform: scale(1.05) !important;
+}
+
+@keyframes logoFloat {
+    0%, 100% { 
+        transform: translateY(0px) scale(1); 
+    }
+    50% { 
+        transform: translateY(-8px) scale(1.02); 
+    }
+}
+
+.login-pf-header h1:first-of-type {
+    color: var(--text-primary) !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    letter-spacing: -0.8px !important;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.6) !important;
+    line-height: 1.2 !important;
+}
+
+.subtitle {
+    color: var(--text-secondary) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    margin: 0 0 8px 0 !important;
+    opacity: 0.9 !important;
+    letter-spacing: 0.3px !important;
+}
+
+.form-group,
+.kcFormGroupClass,
+[class*="kcFormGroup"] {
+    margin-bottom: 24px !important;
+    position: relative;
+}
+
+label,
+div#kc-form label,
+.form-group label,
+label[for="username"],
+label[for="password"] {
+    display: block !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    margin-bottom: 8px !important;
+    font-family: 'Inter', sans-serif !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    opacity: 0.9 !important;
+}
+
+label[for="password"] {
+    margin-top: 8px !important;
+}
+
+.form-control,
+input[type="text"], 
+input[type="password"], 
+input[type="email"],
+#username,
+#password,
+#kc-form-wrapper input[type="text"],
+#kc-form-wrapper input[type="password"],
+#kc-form-login input[type="text"],
+#kc-form-login input[type="password"] {
+    width: 100% !important;
+    background: var(--input-bg) !important;
+    border: 1px solid var(--input-border) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 16px 20px !important;
+    font-size: 15px !important;
+    color: var(--text-primary) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    font-family: 'Inter', sans-serif !important;
+    min-height: 52px !important;
+    box-sizing: border-box !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.form-control::placeholder,
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder,
+#username::placeholder,
+#password::placeholder {
+    color: rgba(255, 255, 255, 0.5) !important;
+    opacity: 1 !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+}
+
+.form-control:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+#username:focus,
+#password:focus {
+    outline: none !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(102, 126, 234, 0.6) !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15) !important;
+    transform: none !important;
+}
+
+.form-control:hover:not(:focus),
+input[type="text"]:hover:not(:focus),
+input[type="password"]:hover:not(:focus) {
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.12) !important;
+    transform: translateY(-1px) !important;
+}
+
+.btn-primary,
+#kc-login,
+input[type="submit"] {
+    width: 100% !important;
+    background: var(--submit-btn-bg) !important;
+    border: none !important;
+    border-radius: var(--border-radius) !important;
+    padding: 16px var(--spacing-xl) !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: white !important;
+    cursor: pointer !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.8px !important;
+    margin-top: 28px !important;
+    min-height: 52px !important;
+    font-family: 'Inter', sans-serif !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 15px rgba(220, 80, 57, 0.3) !important;
+}
+
+.btn-primary:hover:not(:disabled),
+#kc-login:hover:not(:disabled),
+input[type="submit"]:hover:not(:disabled) {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 8px 25px rgba(220, 80, 57, 0.4) !important;
+    background: var(--submit-btn-hover) !important;
+}
+
+.btn-primary:active,
+#kc-login:active,
+input[type="submit"]:active {
+    transform: translateY(0) !important;
+}
+
+.btn-primary:disabled,
+#kc-login:disabled,
+input[type="submit"]:disabled {
+    opacity: 0.6 !important;
+    cursor: not-allowed !important;
+    transform: none !important;
+}
+
+#kc-content-wrapper,
+#kc-form,
+#kc-form-wrapper {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#kc-form-buttons,
+.form-group:last-child {
+    margin-top: 28px !important;
+    margin-bottom: 0 !important;
+}
+
+.form-options {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin: var(--spacing-lg) 0 !important;
+    flex-wrap: wrap !important;
+    gap: var(--spacing-md) !important;
+}
+
+.checkbox {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.checkbox input[type="checkbox"] {
+    appearance: none !important;
+    width: 18px !important;
+    height: 18px !important;
+    border: 2px solid var(--input-border) !important;
+    border-radius: 4px !important;
+    margin-right: var(--spacing-sm) !important;
+    position: relative;
+    cursor: pointer !important;
+    background: var(--input-bg) !important;
+    transition: all 0.3s ease !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.checkbox input[type="checkbox"]:checked {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.checkbox input[type="checkbox"]:checked::before {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.checkbox label {
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    margin-bottom: 0 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+}
+
+a {
+    color: rgba(255, 255, 255, 0.8) !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    font-weight: 500 !important;
+}
+
+a:hover {
+    color: rgba(255, 255, 255, 1) !important;
+}
+
+.forgot-password a {
+    font-size: 14px !important;
+    color: var(--text-secondary) !important;
+}
+
+.forgot-password a:hover {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.alert-error,
+.error-message {
+    background: rgba(244, 67, 54, 0.15) !important;
+    border: 1px solid rgba(244, 67, 54, 0.3) !important;
+    border-radius: 12px !important;
+    padding: 16px 20px !important;
+    margin-top: 12px !important;
+    color: #ff8a80 !important;
+    font-size: 14px !important;
+    backdrop-filter: blur(10px) !important;
+    font-weight: 500 !important;
+}
+
+.alert-success {
+    background: rgba(40, 167, 69, 0.2) !important;
+    border: 1px solid rgba(40, 167, 69, 0.4) !important;
+    color: #51cf66 !important;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    margin-bottom: 20px !important;
+}
+
+#kc-registration {
+    text-align: center !important;
+    margin-top: var(--spacing-xl) !important;
+    padding-top: var(--spacing-xl) !important;
+    border-top: 1px solid var(--border-glass) !important;
+}
+
+#kc-registration span {
+    color: var(--text-secondary) !important;
+    font-size: 14px !important;
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.pf-v5-c-page__main,
+.pf-v5-c-page__main-section {
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 100vh !important;
+}
+
+@media (max-width: 480px) {
+    .card-pf,
+    .pf-v5-c-card {
+        margin: 16px auto !important;
+        padding: 32px 24px !important;
+        max-width: calc(100% - 32px) !important;
+    }
+    
+    .logo {
+        width: 100px !important;
+        height: 100px !important;
+        margin-bottom: 24px !important;
+    }
+    
+    .login-pf-header h1 {
+        font-size: 28px !important;
+    }
+    
+    .subtitle {
+        font-size: 15px !important;
+    }
+    
+    .form-control,
+    input[type="text"],
+    input[type="password"] {
+        padding: 16px 18px !important;
+        min-height: 52px !important;
+    }
+    
+    .btn-primary,
+    #kc-login,
+    input[type="submit"] {
+        padding: 16px var(--spacing-lg) !important;
+        min-height: 52px !important;
+    }
+    
+    .form-options {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+}
